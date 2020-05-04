@@ -28,10 +28,16 @@
 # To run demos created by Zehui
 
 The demos are all with j2s7s300.
+```
+chmod +x /kinova_control/src/move_robot_zehui.py
+```
+
+
+# Demo 1: Send single joint command to each joint
 
 Terminal 1 (launch Gazebo)
 ```
-roslaunch kinova_gazebo robot_launch_j2s7s300.launch
+roslaunch kinova_gazebo robot_launch.launch kinova_robotType:=j2s7s300 use_trajectory_controller:=false
 ```
 
 Terminal 2 (launch the joint command node)
@@ -39,6 +45,18 @@ Terminal 2 (launch the joint command node)
 roslaunch kinova_control kinova_rqt.launch kinova_robotType:=j2s7s300 
 ```
 
+Then send joint commands to /j2s7s300/joint_1_position_controller/command and the message type is std_msgs/Float64
+
+# Demo 2: Send joint trajectory commands via MoveIt
+Terminal 1 (launch Gazebo)
+```
+roslaunch kinova_gazebo robot_launch.launch kinova_robotType:=j2s7s300
+```
+
+Terminal 2 (launch the MoveIt node)
+```
+rosrun kinova_control move_robot.py j2s7s300
+```
 
 # Important
 
