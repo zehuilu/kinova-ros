@@ -25,6 +25,21 @@
   - [Report a Bug](#report-a-bug)
 
 
+# To run demos created by Zehui
+
+The demos are all with j2s7s300.
+
+Terminal 1 (launch Gazebo)
+```
+roslaunch kinova_gazebo robot_launch_j2s7s300.launch
+```
+
+Terminal 2 (launch the joint command node)
+```
+roslaunch kinova_control kinova_rqt.launch kinova_robotType:=j2s7s300 
+```
+
+
 # Important
 
 This repository contains source code and configuration files to support the Jaco, Jaco2 and Mico arms in ROS.
